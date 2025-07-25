@@ -1,0 +1,121 @@
+body {
+  margin: 0 auto;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  div[data-custom] {
+    width: 70vw;
+    min-width: 350px;
+  }
+
+  .form-select-chosen {
+    &__input {
+      display: none;
+    }
+
+    &__output-wrap {
+      width: 100%;
+      padding: 15px;
+      border-radius: 10px;
+      box-sizing: border-box;
+      border: 1px solid gray;
+      position: relative;
+      display: flex;
+      cursor: pointer;
+
+      .form-select-chosen__output:empty::before {
+        content: attr(data-placeholder);
+        color: #999;
+      }
+
+      .form-select-chosen__output::after {
+        content: '\2303';
+        color: #999;
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        right: 15px;
+        top: 50%;
+        transform: rotate(180deg);
+      }
+    }
+
+    &__search {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      border-left: 1px solid gray;
+      border-right: 1px solid gray;
+      border-bottom: 1px solid gray;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      margin-top: -6px;
+
+      &-input {
+        width: calc(70vw - 20px);
+        align-self: center;
+        margin-top: 11px;
+        border: 1px solid gray;
+        border-radius: 5px;
+        padding: 10px 10px 10px 30px;
+        box-sizing: border-box;
+      }
+
+      &::before {
+        content: '';
+        display: inline-block;
+        background-image: url('../../public/images/icon-search.png');
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 24px;
+        left: 15px;
+      }
+    }
+
+    &__options {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    &__option {
+      margin-top: 10px;
+      color: #504f4f;
+    }
+
+    &:has(> .form-select-chosen__search.is-visible) >
+    .form-select-chosen__output-wrap .form-select-chosen__output::after {
+      transform: rotate(0deg);
+      top: 40%;
+    }
+
+    &:has(> .form-select-chosen__input.error-class) >
+    .form-select-chosen__output-wrap  {
+      border-color: red;
+    }
+
+    &__input.error-class {
+      border-color: red;
+    }
+  }
+
+  .input-error {
+    color: red;
+  }
+
+  button[type='submit'] {
+    background: deepskyblue;
+    color: white;
+    border: 1px solid gray;
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 10px;
+  }
+}

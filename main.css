@@ -1,0 +1,204 @@
+@charset "UTF-8";
+body {
+  margin: 0 auto;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form div[data-custom] {
+  width: 70vw;
+  min-width: 350px;
+}
+form .form-select-chosen__input {
+  display: none;
+}
+form .form-select-chosen__output-wrap {
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  border: 1px solid gray;
+  position: relative;
+  display: flex;
+  cursor: pointer;
+}
+form .form-select-chosen__output-wrap .form-select-chosen__output:empty::before {
+  content: attr(data-placeholder);
+  color: #999;
+}
+form .form-select-chosen__output-wrap .form-select-chosen__output::after {
+  content: "⌃";
+  color: #999;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  right: 15px;
+  top: 50%;
+  transform: rotate(180deg);
+}
+form .form-select-chosen__search {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  border-bottom: 1px solid gray;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-top: -6px;
+}
+form .form-select-chosen__search-input {
+  width: calc(70vw - 20px);
+  align-self: center;
+  margin-top: 11px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 10px 10px 10px 30px;
+  box-sizing: border-box;
+}
+form .form-select-chosen__search::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../public/images/icon-search.png");
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 24px;
+  left: 15px;
+}
+form .form-select-chosen__options {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+form .form-select-chosen__option {
+  margin-top: 10px;
+  color: #504f4f;
+}
+form .form-select-chosen:has(> .form-select-chosen__search.is-visible) > .form-select-chosen__output-wrap .form-select-chosen__output::after {
+  transform: rotate(0deg);
+  top: 40%;
+}
+form .form-select-chosen:has(> .form-select-chosen__input.error-class) > .form-select-chosen__output-wrap {
+  border-color: red;
+}
+form .form-select-chosen__input.error-class {
+  border-color: red;
+}
+form .input-error {
+  color: red;
+}
+form button[type=submit] {
+  background: deepskyblue;
+  color: white;
+  border: 1px solid gray;
+  width: 300px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.wrap {
+  background: #f3f4f6;
+}
+.wrap .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px;
+}
+.wrap .cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+.wrap .card {
+  display: flex;
+  gap: 10px;
+  max-width: 600px;
+}
+.wrap .card__img {
+  width: 260px;
+  height: 360px;
+}
+.wrap .card__img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.wrap .card__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 260px;
+  padding: 10px;
+  font-family: "Times New Roman", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #a4a8b1;
+}
+.wrap .card__info-type {
+  font-weight: 600;
+  color: #86898c;
+}
+.wrap .card__info-title {
+  color: #86898c;
+  font-weight: 800;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.wrap .card__info-comment {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  gap: 20px;
+}
+.wrap .card__info-comment-img {
+  width: 60px;
+  height: 60px;
+}
+.wrap .card__info-comment-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+}
+.wrap .card__info-comment-data-name {
+  font-weight: 600;
+  color: #86898c;
+}
+
+@media screen and (max-width: 1200px) {
+  .wrap .container {
+    padding: 50px 30px;
+  }
+  .wrap .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 600px) {
+  .wrap .cards .card {
+    flex-direction: column;
+    height: 100%;
+    gap: 0;
+  }
+  .wrap .cards .card__img {
+    height: 260px;
+  }
+  .wrap .cards .card__info {
+    text-align: center;
+  }
+  .wrap .cards .card__info-type {
+    align-self: flex-start;
+  }
+  .wrap .cards .card__info-comment {
+    justify-content: center;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
